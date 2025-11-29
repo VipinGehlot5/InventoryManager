@@ -1,4 +1,4 @@
-import apiClient from './client';
+
 
 export interface InventoryItem {
   id: string;
@@ -127,8 +127,8 @@ export const updateInventoryItem = async (
       (data.quantity ?? inventoryStore[index].quantity) === 0
         ? 'Out of Stock'
         : (data.quantity ?? inventoryStore[index].quantity) < 10
-        ? 'Low Stock'
-        : 'In Stock',
+          ? 'Low Stock'
+          : 'In Stock',
   };
 
   inventoryStore[index] = updatedItem;
